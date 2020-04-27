@@ -40,6 +40,7 @@ public class ElConfig {
 	@Autowired
 	private Environment environment;
 
+	// => @Value("${book.name}")
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertyConfigure() {
 		return new PropertySourcesPlaceholderConfigurer();
