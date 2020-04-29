@@ -31,4 +31,15 @@ public class DemoObj {
 		this.name = name;
 	}
 
+	@Override
+	public String toString() {
+		String ret;
+		if (this.id == null) {
+			ret = String.format("id=null, name=%s", this.name);
+		} else {
+			ret = String.format("id=%s, name=%s", this.id, this.name);
+		}
+		return ret;
+	}
+
 }
