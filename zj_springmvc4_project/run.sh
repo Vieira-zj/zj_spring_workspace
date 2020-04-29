@@ -21,6 +21,7 @@ if [[ $1 == "start" ]]; then
   docker exec tomcat cp ${war_file_path} /usr/local/tomcat/webapps/
   sleep 1
   docker restart tomcat
+  echo "tomcat restarted, and access: http://localhost:8080/springmvc4/index"
 fi
 
 echo "springmvc4 done."
