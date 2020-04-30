@@ -12,13 +12,22 @@ public class DemoRestController {
 	// path: /rest/getjson?id=1&name=xx
 	@RequestMapping(value = "/getjson", produces = "application/json;charset=UTF-8")
 	public DemoObj getjson(DemoObj obj) {
-		return new DemoObj(obj.getId() + 1, obj.getName() + "_json");
+		Long id = obj.getId();
+		// check null here, see ExceptionHandlerAdvice.initBinder for details
+		if (id == null) {
+			id = new Long(1);
+		}
+		return new DemoObj(new Long(id + 1), obj.getName() + "_json");
 	}
 
 	// path: /rest/getxml?id=2&name=yy
 	@RequestMapping(value = "/getxml", produces = "application/xml;charset=UTF-8")
 	public DemoObj getxml(DemoObj obj) {
-		return new DemoObj(obj.getId() + 1, obj.getName() + "_xml");
+		Long id = obj.getId();
+		if (id == null) {
+			id = new Long(1);
+		}
+		return new DemoObj(new Long(id + 1), obj.getName() + "_xml");
 	}
 
 }
