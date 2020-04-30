@@ -1,8 +1,11 @@
 package com.zhengjin.springmvc4;
 
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -14,6 +17,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 import com.zhengjin.springmvc4.interceptor.DemoInterceptor;
+import com.zhengjin.springmvc4.messageconverter.MyMessageConverter;
 
 @Configuration
 @EnableWebMvc
@@ -54,10 +58,23 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
 		registry.addInterceptor(demoInterceptor());
 	}
 
+	// 请求跳转到页面
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/home").setViewName("/index");
 		registry.addViewController("/toUpload").setViewName("/upload");
+		registry.addViewController("/converter").setViewName("/converter");
+	}
+
+	@Bean
+	public MyMessageConverter converter() {
+		return new MyMessageConverter();
+	}
+
+	// 注册自定义的HttpMessageConverter
+	@Override
+	public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+		converters.add(converter());
 	}
 
 }
