@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -21,6 +22,7 @@ import com.zhengjin.springmvc4.messageconverter.MyMessageConverter;
 
 @Configuration
 @EnableWebMvc
+@EnableScheduling
 @ComponentScan("com.zhengjin.springmvc4")
 public class MyMvcConfig extends WebMvcConfigurerAdapter {
 
@@ -64,6 +66,8 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
 		registry.addViewController("/home").setViewName("/index");
 		registry.addViewController("/toUpload").setViewName("/upload");
 		registry.addViewController("/converter").setViewName("/converter");
+		registry.addViewController("/sse").setViewName("/sse");
+		registry.addViewController("/async").setViewName("/async");
 	}
 
 	@Bean
