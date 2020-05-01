@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class DemoService {
 
+	// @Value注入值
 	@Value("其他类的属性")
 	private String another;
 

@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LogAspect {
 
+	// 复用Pointcut
 	@Pointcut("@annotation(com.zhengjin.spring4.ch1.aop.Action)")
 	public void annotationPointCut() {
 	}
@@ -30,7 +31,7 @@ public class LogAspect {
 	public void before(JoinPoint joinPoint) {
 		MethodSignature signature = (MethodSignature) joinPoint.getSignature();
 		Method method = signature.getMethod();
-		System.out.println("方法是拦截 " + method.getName());
+		System.out.println("方法式拦截 " + method.getName());
 	}
 
 }

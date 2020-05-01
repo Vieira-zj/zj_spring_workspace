@@ -5,14 +5,14 @@ import javax.annotation.PreDestroy;
 
 public class JSR250WayService {
 
-	@PostConstruct
-	public void init() {
-		System.out.println("@jsr250-init-method");
-	}
-
 	public JSR250WayService() {
 		super();
 		System.out.println("Constructor-JSR250WayService");
+	}
+
+	@PostConstruct
+	public void init() {
+		System.out.println("@jsr250-init-method");
 	}
 
 	@PreDestroy
