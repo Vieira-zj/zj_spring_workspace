@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.zhengjin.spring_boot_starter_hello.HelloService;
 import com.zhengjin.springboot.ch6_2_3.config.AuthorSettings;
 
 @RestController
@@ -22,11 +23,15 @@ public class Ch522Application {
 	@Autowired
 	AuthorSettings authorSettings;
 
+	@Autowired
+	HelloService helloService;
+
 	@RequestMapping("/")
 	String index() {
 		String ret = "Hello Spring Boot";
 		ret += "<br>" + String.format("book author:%s, name:%s", bookAuthor, bookName);
 		ret += "<br>" + String.format("author name:%s, age:%d", authorSettings.getName(), authorSettings.getAge());
+		ret += "<br>" + "Customized auto starter config: " + helloService.sayHello();
 		return ret;
 	}
 
