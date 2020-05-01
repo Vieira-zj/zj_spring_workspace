@@ -11,9 +11,10 @@ public class ScheduledTaskService {
 
 	private static final SimpleDateFormat dataFormat = new SimpleDateFormat("HH:mm:ss");
 
-	@Scheduled(fixedRate = 5000)
+	// run at fixed rate until context closed
+	@Scheduled(fixedRate = 3000)
 	public void reportCurrentTime() {
-		System.out.println("execute every 5 seconds: " + dataFormat.format(new Date()));
+		System.out.println("execute every 3 seconds: " + dataFormat.format(new Date()));
 	}
 
 	@Scheduled(cron = "0 28 11 ? * *")

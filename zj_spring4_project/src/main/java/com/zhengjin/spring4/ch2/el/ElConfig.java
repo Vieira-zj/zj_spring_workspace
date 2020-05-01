@@ -15,7 +15,7 @@ import org.springframework.core.io.Resource;
 
 @Configuration
 @ComponentScan("com.zhengjin.spring4.ch2.el")
-@PropertySource("classpath:test.properties")
+@PropertySource("classpath:ch2_test.properties")
 public class ElConfig {
 
 	@Value("I love spring!")
@@ -30,7 +30,7 @@ public class ElConfig {
 	@Value("#{demoService.another}")
 	private String fromAnother;
 
-	@Value("classpath:test.txt")
+	@Value("classpath:ch2_test.txt")
 	private Resource testFile;
 
 	@Value("${book.name}")

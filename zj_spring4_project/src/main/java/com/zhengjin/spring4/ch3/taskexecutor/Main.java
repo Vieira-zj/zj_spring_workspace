@@ -13,7 +13,6 @@ public class Main {
 			asyncTaskService.executeAsyncTask(i);
 			asyncTaskService.executeAsyncTaskPlus(i);
 		}
-
 		context.close();
 	}
 
