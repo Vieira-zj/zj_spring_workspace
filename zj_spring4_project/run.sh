@@ -1,5 +1,5 @@
 #!/bin/bash
-set -xu
+set -eu
 
 if [[ $1 = "jar" ]]; then
   echo "build spring jar"

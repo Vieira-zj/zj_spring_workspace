@@ -35,6 +35,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
 		return viewResolver;
 	}
 
+	// 文件上传
 	@Bean
 	public MultipartResolver multipartResolver() {
 		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();

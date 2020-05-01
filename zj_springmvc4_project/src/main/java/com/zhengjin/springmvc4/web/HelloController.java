@@ -8,7 +8,7 @@ public class HelloController {
 
 	@RequestMapping("/index")
 	public String hello() {
-		// 通过ViewResolver的Bean配置: WEB-INF/classes/views/index.jsp
+		// 通过ViewResolver的Bean配置: 映射 WEB-INF/classes/views/index.jsp
 		return "index";
 	}
 

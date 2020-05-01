@@ -32,7 +32,7 @@ public class DemoAnnoController {
 	}
 
 	// path: /anno/obj?id=3&name=yy
-	@RequestMapping(value = "/obj", produces = "application/json;charset=UTF-8")
+	@RequestMapping(value = "/obj", produces = "text/plain;charset=UTF-8")
 	@ResponseBody
 	public String passObject(DemoObj obj, HttpServletRequest request) {
 		return String.format("url: %s can access, obj id: %d object name: %s", request.getRequestURL(), obj.getId(),
