@@ -12,12 +12,13 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-		registry.addEndpoint("/endpointjin").withSockJS();
+		registry.addEndpoint("/endpointjin").withSockJS(); // 广播
+		registry.addEndpoint("/endpointchat").withSockJS(); // 点对点
 	}
 
 	@Override
 	public void configureMessageBroker(MessageBrokerRegistry registry) {
-		registry.enableSimpleBroker("/topic");
+		registry.enableSimpleBroker("/topic", "/queue");
 	}
 
 }
