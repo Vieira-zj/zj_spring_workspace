@@ -2,17 +2,17 @@ package com.zhengjin.springboot_jpa.dao;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.zhengjin.springboot_jpa.domain.Person;
+import com.zhengjin.springboot_jpa.support.CustomRepository;
 
 /**
- * 数据访问接口
+ * 继承CustomRepository接口，即可使用在自定义Repository中实现的功能。
  *
  */
-public interface PersonRepository extends JpaRepository<Person, Long> {
+public interface PersonRepository2 extends CustomRepository<Person, Long> {
 
 	List<Person> findByAddress(String address);
 

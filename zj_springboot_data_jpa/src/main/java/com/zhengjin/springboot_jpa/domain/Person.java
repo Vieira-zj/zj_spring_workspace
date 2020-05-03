@@ -5,6 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
+/**
+ * 在实体类中定义的数据类型要用包装类型（Long, Integer），而不能使用原始数据类型（long, int）。在Spring MVC中，
+ * 使用原始数据类型会自动初始化为0, 而不是空。
+ * 
+ */
 @Entity
 @NamedQuery(name = "Person.withNameAndAddressNamedQuery", query = "select p from Person p where p.name = ?1 and address =?2")
 public class Person {

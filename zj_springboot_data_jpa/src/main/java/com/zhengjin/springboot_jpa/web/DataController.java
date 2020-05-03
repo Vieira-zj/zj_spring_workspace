@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zhengjin.springboot_jpa.dao.PersonRepository;
+import com.zhengjin.springboot_jpa.dao.PersonRepository2;
 import com.zhengjin.springboot_jpa.domain.Person;
 
 @RestController
@@ -18,6 +19,9 @@ public class DataController {
 
 	@Autowired
 	PersonRepository personRepository;
+
+	@Autowired
+	PersonRepository2 personRepository2;
 
 	// curl -v "http://localhost:8081/save?name=cc&address=shanghai&age=25"
 	@RequestMapping("/save")
@@ -65,6 +69,31 @@ public class DataController {
 	@RequestMapping("/page")
 	public Page<Person> page() {
 		Page<Person> pagePeople = personRepository.findAll(new PageRequest(1, 2));
+		return pagePeople;
+	}
+
+	// curl -v "http://localhost:8081/wuhan"
+	@RequestMapping("/wuhan")
+	public List<Person> wuhan() {
+		List<Person> people = personRepository2.findAllByAddressWuHan();
+		return people;
+	}
+
+	/**
+	 * String类型使用like查询，非String类型使用equal查询。
+	 * 
+	 * 1. 当person的name有值时，自动对name进行like查询； 2. 当age有值时，进行等于查询； 3.
+	 * 当多个值不为空时，自动构造多个查询条件； 4. 当Person所有值为空的时候，默认查询出所有的记录；
+	 * 
+	 * @param person
+	 * @return
+	 */
+	// curl -v "http://localhost:8081/auto"
+	// curl -v "http://localhost:8081/auto?address=han"
+	// curl -v "http://localhost:8081/auto?address=han&age=30"
+	@RequestMapping("/auto")
+	public Page<Person> auto(Person person) {
+		Page<Person> pagePeople = personRepository2.findByAuto(person, new PageRequest(0, 10));
 		return pagePeople;
 	}
 
