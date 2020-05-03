@@ -15,6 +15,7 @@ public class MyRestController {
 	@Autowired
 	DemoService demoService;
 
+	// for integration test
 	@RequestMapping(value = "/testRest", produces = "text/plain;charset=UTF-8")
 	public @ResponseBody String testRest() {
 		return demoService.saySomething();
