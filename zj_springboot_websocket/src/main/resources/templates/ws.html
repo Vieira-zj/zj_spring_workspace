@@ -21,7 +21,7 @@
 	</div>
 	<script th:src="@{sockjs.min.js}"></script>
 	<script th:src="@{stomp.min.js}"></script>
-	<script th:src="@{jquery.js}"></script>
+	<script th:src="@{jquery.min.js}"></script>
 	<script type="text/javascript">
 		var stompClient = null;
 
@@ -39,6 +39,7 @@
 			stompClient.connect({}, function(frame) {
 				setConnected(true);
 				console.log('Connected:', frame);
+				// 订阅广播消息
 				stompClient.subscribe('/topic/getResponse', function(response) {
 					showResponse(JSON.parse(response.body).responseMessage);
 				});

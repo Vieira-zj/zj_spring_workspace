@@ -86,6 +86,7 @@ public class Ch522Application {
 	@Profile("prod")
 	public EmbeddedServletContainerFactory prodServletContainer() {
 		TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory() {
+
 			@Override
 			protected void postProcessContext(Context context) {
 				SecurityConstraint securityConstraint = new SecurityConstraint();

@@ -6,14 +6,20 @@ import org.springframework.web.socket.config.annotation.AbstractWebSocketMessage
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 
+/**
+ * 广播 和 点对点
+ * 
+ * @author zhengjin
+ *
+ */
 @Configuration
 @EnableWebSocketMessageBroker
 public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-		registry.addEndpoint("/endpointjin").withSockJS(); // 广播
-		registry.addEndpoint("/endpointchat").withSockJS(); // 点对点
+		registry.addEndpoint("/endpointjin").withSockJS();
+		registry.addEndpoint("/endpointchat").withSockJS();
 	}
 
 	@Override
