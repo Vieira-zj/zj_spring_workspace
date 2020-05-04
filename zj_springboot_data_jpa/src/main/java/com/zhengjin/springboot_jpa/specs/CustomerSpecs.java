@@ -27,6 +27,7 @@ public class CustomerSpecs {
 
 			@Override
 			public Predicate toPredicate(Root<T> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+				// 使用root来获得需要查询的属性，通过CriteriaBuilder构造查询条件
 				return cb.equal(root.get("address"), "wuhan");
 			}
 		};

@@ -10,7 +10,7 @@ if [[ $1 == "dbstart" ]]; then
   echo "start mysql."
   docker run --name test-mysql --hostname mysql -d --rm -p 3306:3306 \
     -e MYSQL_ROOT_PASSWORD=root -v /tmp/mysql:/var/lib/mysql mysql:8.0.20
-  sleep 3
+  sleep 5 
   docker exec test-mysql sh -c "mysql -hmysql -uroot -proot -e \"select version();create database test;\""
 fi
 
