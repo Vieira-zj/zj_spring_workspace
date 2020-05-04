@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.zhengjin.springboot_jpa.dao.PersonRepository;
 import com.zhengjin.springboot_jpa.dao.PersonRepository2;
 import com.zhengjin.springboot_jpa.domain.Person;
+import com.zhengjin.springboot_jpa.service.DemoService;
 
 @RestController
 public class DataController {
@@ -22,6 +23,9 @@ public class DataController {
 
 	@Autowired
 	PersonRepository2 personRepository2;
+
+	@Autowired
+	DemoService demoService;
 
 	// curl -v "http://localhost:8081/save?name=cc&address=shanghai&age=25"
 	@RequestMapping("/save")
@@ -95,6 +99,18 @@ public class DataController {
 	public Page<Person> auto(Person person) {
 		Page<Person> pagePeople = personRepository2.findByAuto(person, new PageRequest(0, 10));
 		return pagePeople;
+	}
+
+	// curl -v "http://localhost:8081/rollback?name=test_tx&age=32&address=shengzhen"
+	@RequestMapping("/rollback")
+	public Person rollback(Person person) {
+		return demoService.savePersonWithRollBack(person);
+	}
+
+	// curl -v "http://localhost:8081/norollback?name=test_tx&age=32&address=shengzhen"
+	@RequestMapping("/norollback")
+	public Person noRollback(Person person) {
+		return demoService.savePersonWithoutRollBack(person);
 	}
 
 }
