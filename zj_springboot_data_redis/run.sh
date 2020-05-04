@@ -19,5 +19,7 @@ fi
 # CHECK REDIS ENV
 # docker exec -it redis-test sh
 # docker$ redis-cli
+# redis-cli$ keys *
+# redis-cli$ get 1
 
 echo "run spring boot data redis done."

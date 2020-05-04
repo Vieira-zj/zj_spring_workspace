@@ -19,6 +19,7 @@ public class Ch77Application {
 		return new Person(personName, new Random().nextInt(40), "ShangHai");
 	}
 
+	// url: http://localhost:8081/action.html
 	public static void main(String[] args) {
 
 		SpringApplication.run(Ch77Application.class, args);

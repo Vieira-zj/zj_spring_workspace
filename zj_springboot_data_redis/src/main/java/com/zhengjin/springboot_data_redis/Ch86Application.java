@@ -20,6 +20,7 @@ public class Ch86Application {
 		SpringApplication.run(Ch86Application.class, args);
 	}
 
+	// define RedisTemplate with customized Serializer
 	@Bean
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
