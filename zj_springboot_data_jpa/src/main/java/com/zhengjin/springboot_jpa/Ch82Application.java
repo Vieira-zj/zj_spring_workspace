@@ -2,11 +2,13 @@ package com.zhengjin.springboot_jpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.zhengjin.springboot_jpa.support.CustomRepositoryFactoryBean;
 
 @SpringBootApplication
+@EnableCaching
 @EnableJpaRepositories(repositoryFactoryBeanClass = CustomRepositoryFactoryBean.class)
 public class Ch82Application {
 

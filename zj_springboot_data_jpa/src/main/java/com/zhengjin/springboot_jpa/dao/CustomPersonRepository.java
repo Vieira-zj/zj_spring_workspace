@@ -12,7 +12,7 @@ import com.zhengjin.springboot_jpa.support.CustomRepository;
  * 继承CustomRepository接口，即可使用在自定义Repository中实现的功能。
  *
  */
-public interface PersonRepository2 extends CustomRepository<Person, Long> {
+public interface CustomPersonRepository extends CustomRepository<Person, Long> {
 
 	List<Person> findByAddress(String address);
 
