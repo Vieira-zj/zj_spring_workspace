@@ -7,7 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zhengjin.springboot_jpa.dao.PersonRepository;
@@ -95,6 +97,12 @@ public class DataController {
 	public Page<Person> auto(Person person) {
 		Page<Person> pagePeople = customRepository.findByAuto(person, new PageRequest(0, 10));
 		return pagePeople;
+	}
+
+	// curl -v "http://localhost:8081/test"
+	@RequestMapping(value = "/test", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Person> findAll() {
+		return personRepository.findAll();
 	}
 
 }
