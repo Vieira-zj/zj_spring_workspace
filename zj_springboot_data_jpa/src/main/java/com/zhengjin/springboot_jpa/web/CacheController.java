@@ -8,24 +8,25 @@ import com.zhengjin.springboot_jpa.domain.Person;
 import com.zhengjin.springboot_jpa.service.CacheService;
 
 @RestController
+@RequestMapping("/cache")
 public class CacheController {
 
 	@Autowired
 	CacheService cacheService;
 
-	// curl -v "http://localhost:8081/put?name=dd&age=32&address=chengdu"
+	// curl -v "http://localhost:8081/cache/put?name=dd&age=32&address=chengdu"
 	@RequestMapping("/put")
 	public Person put(Person person) {
 		return cacheService.save(person);
 	}
 
-	// curl -v "http://localhost:8081/get?id=1"
+	// curl -v "http://localhost:8081/cache/get?id=1"
 	@RequestMapping("/get")
 	public Person get(Person person) {
 		return cacheService.findOne(person);
 	}
 
-	// curl -v "http://localhost:8081/evit?id=1"
+	// curl -v "http://localhost:8081/cache/evit?id=1"
 	@RequestMapping("/evit")
 	public String evit(Long id) {
 		cacheService.remove(id);

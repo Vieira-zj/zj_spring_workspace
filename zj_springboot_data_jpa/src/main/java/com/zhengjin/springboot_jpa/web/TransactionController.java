@@ -8,18 +8,21 @@ import com.zhengjin.springboot_jpa.domain.Person;
 import com.zhengjin.springboot_jpa.service.DemoService;
 
 @RestController
+@RequestMapping("/trx")
 public class TransactionController {
 
 	@Autowired
 	DemoService demoService;
 
-	// curl -v "http://localhost:8081/rollback?name=test_tx&age=32&address=shengzhen"
+	// curl -v
+	// "http://localhost:8081/trx/rollback?name=test_tx&age=32&address=shengzhen"
 	@RequestMapping("/rollback")
 	public Person rollback(Person person) {
 		return demoService.savePersonWithRollBack(person);
 	}
 
-	// curl -v "http://localhost:8081/norollback?name=test_tx&age=32&address=shengzhen"
+	// curl -v
+	// "http://localhost:8081/trx/norollback?name=test_tx&age=32&address=shengzhen"
 	@RequestMapping("/norollback")
 	public Person noRollback(Person person) {
 		return demoService.savePersonWithoutRollBack(person);

@@ -13,7 +13,7 @@ spring:
     template-loader-path: classpath:/templates
     suffix: .ftl
   datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test?useSSL=false
     username: root
     password: root
@@ -22,8 +22,10 @@ spring:
     initialization-mode: always
   jpa:
     show-sql: true
+    open-in-view: false
     hibernate:
       ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5Dialect
   jackson:
     serialization:
       indent_output: true
