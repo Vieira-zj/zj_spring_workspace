@@ -1,3 +1,3 @@
 # zj_spring_workspace
 
-Spring, Spring MVC and Spring Boot demo.
+The workspace include Spring, Spring MVC and Spring Boot (web, websocket, crud, jpa) demos.

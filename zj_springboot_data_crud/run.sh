@@ -6,11 +6,6 @@ if [[ $1 == "web" ]]; then
   mvn spring-boot:run -Dmaven.test.skip=true
 fi
 
-if [[ $1 == "test" ]]; then
-  echo "integration test for spring boot."
-  mvn clean package
-fi
-
 if [[ $1 == "dbstart" ]]; then
   echo "start mysql."
   docker run --name test-mysql --hostname mysql -d --rm -p 3306:3306 \
@@ -37,4 +32,4 @@ fi
 #
 # show variables like 'character%';
 
-echo "run spring boot data jpa done."
+echo "run spring boot data crud done."

@@ -1,3 +1,4 @@
+-- person
 delete from person;
 insert into person(name,age,address) values('xx',31,'beijing');
 insert into person(name,age,address) values('yy',30,'shanghai');
