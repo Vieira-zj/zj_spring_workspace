@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PeopleController {
 
-	// path: /helloboot/people
+	// path: http://localhost:8081/helloboot/people
 	@RequestMapping("/people")
 	public String people(Model model) {
 		Person single = new Person("aa", 11);
