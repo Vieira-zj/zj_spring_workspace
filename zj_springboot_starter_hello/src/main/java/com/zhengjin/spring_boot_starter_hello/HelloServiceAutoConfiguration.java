@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableConfigurationProperties(HelloServiceProperties.class)
-@ConditionalOnProperty(prefix = "hello", value = "enabled", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "autocfg.custom", value = "enabled", havingValue = "true", matchIfMissing = true)
 public class HelloServiceAutoConfiguration {
 
 	@Autowired

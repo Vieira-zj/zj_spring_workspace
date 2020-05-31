@@ -17,8 +17,8 @@ public class ExceptionController {
 	public void throwException() {
 		Person p = new Person("g_exception_test", 33);
 		Map<String, Object> data = new HashMap<>();
-		data.put("person name:", p.getName());
-		data.put("person age:", p.getAge());
+		data.put("PersonName:", p.getName());
+		data.put("PersonAge:", p.getAge());
 		throw new ResourceNotFoundException(data);
 	}
 

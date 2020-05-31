@@ -8,4 +8,5 @@ public class DemoService {
 	public void outputResult() {
 		System.out.println("从组合注解获得Bean");
 	}
+
 }

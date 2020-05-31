@@ -22,4 +22,5 @@ public interface CustomRepository<T, ID extends Serializable>
 	List<T> findAllByAddressWuHan();
 
 	Page<T> findByAuto(T example, Pageable pageable);
+
 }

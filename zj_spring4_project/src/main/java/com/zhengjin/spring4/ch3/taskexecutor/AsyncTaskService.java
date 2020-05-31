@@ -14,8 +14,8 @@ public class AsyncTaskService {
 
 	@Async
 	public void executeAsyncTaskPlus(Integer i) {
-		System.out
-				.println(String.format("[%s] execute async task plus: %d", Thread.currentThread().getName(), (i + 1)));
+		System.out.println(
+				String.format("[%s] execute async task plus: %d", Thread.currentThread().getName(), (i + 1)));
 	}
 
 }
