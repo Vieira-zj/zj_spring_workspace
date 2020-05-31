@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zhengjin.spring_boot_starter_hello.HelloService;
+import com.zhengjin.springboot.ch.aop.EagleEye;
 import com.zhengjin.springboot.ch6_2_3.config.AuthorSettings;
 
 @Controller
@@ -40,17 +41,22 @@ public class Ch522Application {
 	@Autowired
 	HelloService helloService;
 
-	// path: /helloboot
+	// curl -v "http://localhost:8081/helloboot/"
+	@EagleEye(desc = "springboot home path")
 	@RequestMapping("/")
 	public @ResponseBody String defaultMsg() {
-		String ret = "Hello Spring Boot";
-		ret += "<br>" + String.format("book author:%s, name:%s", bookAuthor, bookName);
-		ret += "<br>" + String.format("author name:%s, age:%d", authorSettings.getName(), authorSettings.getAge());
-		ret += "<br>" + "Customized auto config starter: " + helloService.sayHello();
-		return ret;
+		StringBuilder sb = new StringBuilder(200);
+		sb.append("Hello Spring Boot");
+		sb.append("<br>");
+		sb.append(String.format("book author:%s, name:%s", bookAuthor, bookName));
+		sb.append("<br>");
+		sb.append(String.format("author name:%s, age:%d", authorSettings.getName(), authorSettings.getAge()));
+		sb.append("<br>");
+		sb.append("Customized auto config starter: ").append(helloService.sayHello());
+		return sb.toString();
 	}
 
-	// path: /helloboot/index
+	// curl -v "http://localhost:8081/helloboot/index"
 	@RequestMapping("/index")
 	public String index(Model model) {
 		model.addAttribute("bodyContent", "Spring Boot Index Page");
