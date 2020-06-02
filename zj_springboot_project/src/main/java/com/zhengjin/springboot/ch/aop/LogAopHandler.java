@@ -21,9 +21,9 @@ import com.alibaba.fastjson.JSON;
 
 @Aspect
 @Component
-public class LogAcpect {
+public class LogAopHandler {
 
-	private static final Logger logger = LoggerFactory.getLogger(LogAcpect.class);
+	private static final Logger logger = LoggerFactory.getLogger(LogAopHandler.class);
 
 	@Pointcut("@annotation(com.zhengjin.springboot.ch.aop.EagleEye)")
 	public void eagleEye() {
