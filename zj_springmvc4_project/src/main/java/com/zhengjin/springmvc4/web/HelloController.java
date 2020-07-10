@@ -3,6 +3,10 @@ package com.zhengjin.springmvc4.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * 返回静态页面。
+ *
+ */
 @Controller
 public class HelloController {
 

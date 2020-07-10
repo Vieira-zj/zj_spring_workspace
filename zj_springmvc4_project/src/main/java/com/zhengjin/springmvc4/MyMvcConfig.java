@@ -26,6 +26,7 @@ import com.zhengjin.springmvc4.messageconverter.MyMessageConverter;
 @ComponentScan("com.zhengjin.springmvc4")
 public class MyMvcConfig extends WebMvcConfigurerAdapter {
 
+	// 页面view映射
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();

@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zhengjin.springmvc4.domain.DemoObj;
 
+/**
+ * 通过自定义媒体类型处理输入与输出流。（MyMessageConverter.class）
+ *
+ */
 @Controller
 public class ConverterController {
 

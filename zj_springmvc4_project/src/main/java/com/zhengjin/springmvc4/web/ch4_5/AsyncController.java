@@ -8,6 +8,10 @@ import org.springframework.web.context.request.async.DeferredResult;
 
 import com.zhengjin.springmvc4.service.PushService;
 
+/**
+ * 执行异步定时任务。
+ *
+ */
 @Controller
 public class AsyncController {
 

@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zhengjin.springmvc4.domain.DemoObj;
 
+/**
+ * advice全局异常处理。（ControllerAdvice注解）
+ *
+ */
 @Controller
 public class AdviceController {
 

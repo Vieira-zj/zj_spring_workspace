@@ -6,6 +6,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+/**
+ * 拦截器，显示请求的处理时间。
+ *
+ */
 public class DemoInterceptor extends HandlerInterceptorAdapter {
 
 	@Override

@@ -15,14 +15,18 @@ public class MyRestController {
 	@Autowired
 	DemoService demoService;
 
-	// for integration test
+	/*
+	 * for integration test.
+	 */
 	@RequestMapping(value = "/testRest", produces = "text/plain;charset=UTF-8")
 	public @ResponseBody String testRest() {
 		return demoService.saySomething();
 	}
 
-	// test: curl -XPOST "http://localhost:8080/springmvc4/testPost" -H
-	// "Content-Type:text/plain" -d "from curl post"
+	/*
+	 * test: curl -XPOST "http://localhost:8080/springmvc4/testPost" -H
+	 * "Content-Type:text/plain" -d "from curl post"
+	 */
 	@RequestMapping(value = "/testPost", method = RequestMethod.POST, consumes = "text/plain", produces = "text/plain;charset=UTF-8")
 	public String testPost(@RequestBody String message) {
 		return "POST data: " + message;

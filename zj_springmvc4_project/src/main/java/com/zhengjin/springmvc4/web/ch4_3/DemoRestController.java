@@ -5,6 +5,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.zhengjin.springmvc4.domain.DemoObj;
 
+/**
+ * RestController是一个组合注解，组合了Controller和ResponseBody注解。
+ *
+ */
 @RestController
 @RequestMapping("/rest")
 public class DemoRestController {

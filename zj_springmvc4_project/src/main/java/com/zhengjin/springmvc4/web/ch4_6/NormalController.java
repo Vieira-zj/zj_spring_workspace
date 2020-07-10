@@ -13,7 +13,9 @@ public class NormalController {
 	@Autowired
 	DemoService demoService;
 
-	// for integration test
+	/*
+	 * for integration test.
+	 */
 	@RequestMapping("/normal")
 	public String testPage(Model model) {
 		model.addAttribute("msg", demoService.saySomething());

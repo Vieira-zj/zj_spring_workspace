@@ -7,6 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * SSE (Server Send Event), 服务器端推送技术。
+ *
+ */
 @Controller
 public class SseController {
 
