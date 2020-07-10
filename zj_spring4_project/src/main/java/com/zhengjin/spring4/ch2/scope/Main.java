@@ -2,6 +2,10 @@ package com.zhengjin.spring4.ch2.scope;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * Set service scope as "singleton" or "prototype".
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) {

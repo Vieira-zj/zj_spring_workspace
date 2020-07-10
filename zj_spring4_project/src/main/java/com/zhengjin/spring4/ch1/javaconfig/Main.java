@@ -2,6 +2,10 @@ package com.zhengjin.spring4.ch1.javaconfig;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * Inject beans from Configuration.
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) {

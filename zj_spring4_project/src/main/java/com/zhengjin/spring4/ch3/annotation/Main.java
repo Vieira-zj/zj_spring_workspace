@@ -2,6 +2,10 @@ package com.zhengjin.spring4.ch3.annotation;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * 自定义组合注解。
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) {

@@ -2,6 +2,10 @@ package com.zhengjin.spring4.ch3.conditional;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * 根据自定义的Condition条件，从Configuration中动态的返回bean.
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) {

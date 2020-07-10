@@ -2,6 +2,10 @@ package com.zhengjin.spring4.ch1.aop;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * Spring AspectJ AOP demo.
+ * 
+ */
 public class Main {
 
 	public static void main(String[] args) {

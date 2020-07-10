@@ -2,6 +2,10 @@ package com.zhengjin.spring4.ch1.di;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * Get bean service demo. (Component -> Service -> Configuration -> Main)
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) {

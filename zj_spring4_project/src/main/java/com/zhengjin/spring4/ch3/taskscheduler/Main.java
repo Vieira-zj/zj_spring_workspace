@@ -4,6 +4,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * 通过EnableScheduling和Scheduled注释来执行定时任务。
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
