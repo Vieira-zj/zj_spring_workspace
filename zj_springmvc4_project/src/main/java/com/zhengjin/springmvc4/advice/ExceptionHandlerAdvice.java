@@ -20,7 +20,7 @@ public class ExceptionHandlerAdvice {
 		return modelAndView;
 	}
 
-	// 添加全局kv
+	// 添加全局key-value
 	@ModelAttribute
 	public void addAttributes(Model model) {
 		model.addAttribute("msg", "额外信息");

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.zhengjin.springmvc4.domain.DemoObj;
 
 /**
- * Controller注解 + ResponseBody注解
+ * Controller + RequestMapping + ResponseBody注解
  *
  */
 @Controller

@@ -7,10 +7,8 @@ import java.util.Map;
 /**
  * 返回给客户端具体的异常对象。
  * 
- * @author zhengjin
- *
  */
-public class ErrorReponse {
+public class ErrorResponse {
 
 	private int code;
 	private int status;
@@ -19,15 +17,15 @@ public class ErrorReponse {
 	private Instant timestamp;
 	private Map<String, Object> data = new HashMap<>();
 
-	public ErrorReponse() {
+	public ErrorResponse() {
 	}
 
-	public ErrorReponse(BaseException ex, String path) {
+	public ErrorResponse(BaseException ex, String path) {
 		this(ex.getError().getCode(), ex.getError().getStatus().value(), ex.getError().getMessage(), path,
 				ex.getData());
 	}
 
-	public ErrorReponse(int code, int status, String message, String path, Map<String, Object> data) {
+	public ErrorResponse(int code, int status, String message, String path, Map<String, Object> data) {
 		this.code = code;
 		this.status = status;
 		this.message = message;
