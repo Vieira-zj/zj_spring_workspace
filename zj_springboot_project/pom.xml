@@ -16,6 +16,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<fastjson.version>1.2.62</fastjson.version>
+		<mysql.version>8.0.20</mysql.version>
+		<easyexcel.version>2.2.4</easyexcel.version>
+		<hibernate.validator.version>6.1.5.Final</hibernate.validator.version>
 	</properties>
 
 	<parent>
@@ -48,6 +51,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
+
 		<!-- customized auto configuration -->
 		<dependency>
 			<groupId>com.zhengjin</groupId>
@@ -55,11 +59,21 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
-		<!-- json -->
+		<!-- common -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version><!--$NO-MVN-MAN-VER$ -->
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>easyexcel</artifactId>
+			<version>${easyexcel.version}</version>
 		</dependency>
 	</dependencies>
 
